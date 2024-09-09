@@ -6,16 +6,16 @@
 /*   By: rchavez <rchavez@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 10:01:46 by rchavez           #+#    #+#             */
-/*   Updated: 2024/09/09 11:31:27 by rchavez          ###   ########.fr       */
+/*   Updated: 2024/09/09 12:12:01 by rchavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.h"
 
-t_fixed f_mult(t_fixed a, t_fixed b)
+t_fixed	f_mult(t_fixed a, t_fixed b)
 {
 	__int128_t	res;
-	
+
 	res = (__int128_t)a * b;
 	return ((t_fixed)(res >> POINT));
 }
@@ -23,11 +23,10 @@ t_fixed f_mult(t_fixed a, t_fixed b)
 t_fixed	f_div(t_fixed a, t_fixed b)
 {
 	__int128_t	temp;
-	
+
 	temp = (__int128_t)a;
 	temp = temp << POINT;
 	temp = temp / b;
-
 	return ((t_fixed)temp);
 }
 
